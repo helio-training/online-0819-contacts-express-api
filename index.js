@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const app = express()
 const port = process.env.PORT || 5000
 
@@ -14,6 +15,7 @@ let contacts = [
 ]
 
 app.use(express.json())
+app.use(cors())
 
 app.get('/contacts', (req, res) => {
     res.send(contacts)
